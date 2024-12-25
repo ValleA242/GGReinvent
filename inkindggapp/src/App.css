@@ -59,10 +59,13 @@ body,
   border: none !important;
   border-bottom: 2px solid black !important;
   border-radius: 0px !important;
-  outline: none !important;
+  outline: none;
   padding: 5px;
 }
 
+.searchPageSearchBar:focus {
+  box-shadow: none !important;
+}
 
 
 
