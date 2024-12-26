@@ -33,17 +33,17 @@ function SearchResults() {
                     <Row as={Form} className="align-items-center justify-content-between g-2">
                         <Col xs={20} md={7}>
                             <Form.Group className="mb-0">
-                                <Form.Control className="searchPageSearchBar" type="search" placeholder="Search" />
+                                <Form.Control className="searchPageSearchBar" type="search" placeholder="Enter keyword or state here" />
                             </Form.Group>
                         </Col>
 
                         <Col xs="auto">
-                            <Link to="#" className="viewAllOrgs p-0">View All</Link>
+                            <Link to="#" className="viewAllOrgs searchBarLinks p-0">View All</Link>
                         </Col>
 
                         {/* Drawer toggle */}
                         <Col xs="auto">
-                            <Button variant="link" className="filterModalToggle p-0" onClick={toggleDrawer}>{drawer ? "Hide Filters" : "Show Filters"}</Button>
+                            <Button variant="link" className="filterModalToggle searchBarLinks p-0" onClick={toggleDrawer}>{drawer ? "Hide Filters" : "Show Filters"}</Button>
                         </Col>
                     </Row>
 

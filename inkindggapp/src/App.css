@@ -67,6 +67,11 @@ body,
   box-shadow: none !important;
 }
 
+.searchBarLinks {
+  text-decoration: none !important;
+  color: black !important;
+}
+
 
 
 /* Organization Card */
