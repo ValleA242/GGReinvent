@@ -99,6 +99,25 @@ body,
   cursor: pointer;
 }
 
+/* Donation Card */
+
+.cardForDonationModal {
+  text-align: center !important;
+}
+
+.askAmmountButtons {
+  margin: .5rem !important;
+}
+
+.customAmmountField {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-right: auto;
+  margin-left: auto;
+  width: 75% !important;
+  text-align: center;
+}
+
 
 /* Shopping Cart Modal */
 .shoppingCartModal {

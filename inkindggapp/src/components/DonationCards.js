@@ -15,17 +15,19 @@ function DonationCards({ selectedOrg }) {
                     <Card.Title>{selectedOrg.orgName}</Card.Title>
                     <Card.Text>{selectedOrg.location}</Card.Text>
 
+
                     {/* populate ask amount array buttons. Using chaining operator to prevent crash */}
                     {selectedOrg.askAmounts?.map(amount => (
-                        <Button key={`${selectedOrg.id}-${amount}`}>${amount}</Button>
+                        <Button className="askAmmountButtons" key={`${selectedOrg.id}-${amount}`}>${amount}</Button>
                     ))}
+
                     <Form>
-                        <Form.Control placeholder="Custom Amount" />
+                        <Form.Control className="customAmmountField" placeholder="Custom Amount" />
                     </Form>
 
                     {/* Cart functionality not written yet. Waiting on local storage details from givegab repo */}
-                    <Button>Add to Basket</Button>
-                    <Button>Check Out</Button>
+                    <Button className="askAmmountButtons">Add to Basket</Button>
+                    <Button className="askAmmountButtons">Check Out</Button>
                 </Card.Body>
             </Card>
 
