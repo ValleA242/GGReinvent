@@ -1,17 +1,21 @@
 import { Row, Col } from "react-bootstrap";
 import CardCreator from "../components/OrgCard";
+import { organizationArray } from "../ProductStore";
 
 function SearchResults() {
     return (
         <>
-            <Row xs={1} sm={3} className="g-4">
+            <main>
+                <Row xs={1} sm={3} className="g-4">
 
-                <Col align="center">
-                    <CardCreator />
-                </Col>
+                    {organizationArray.map((organization) => (
+                        <Col key={organization.id} align="center">
+                            <CardCreator organization={organization} />
+                        </Col>
+                    ))}
 
-
-            </Row>
+                </Row>
+            </main>
         </>
     )
 }
