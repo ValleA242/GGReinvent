@@ -1,37 +1,35 @@
-import p4clogo from './assets/p4clogo.png';
 
-const organizationArray = [
+//sample data for amazon items
+
+const productArray = [
     {
         id: '1',
-        img: p4clogo,
-        orgName: 'Paws 4 a Cause',
-        location: 'Raleigh, NC'
+        img: "image here",
+        itemName: 'T-Shirt Pack',
+        price: 25
     },
 
     {
         id: '2',
-        img: p4clogo,
-        orgName: 'Paws 4 the Cause',
-        location: 'Raleigh, NC'
+        img: "image here",
+        itemName: 'Gas Card',
+        price: 50
     },
 
     {
         id: '3',
-        img: p4clogo,
-        orgName: 'Paws 4 the Cause',
-        location: 'Raleigh, NC'
+        img: "image here",
+        itemName: 'Diapers',
+        price: 15
     }
 ]
 
-function getOrganizationData(id) {
-    let organizationData = organizationArray.find(organization => organization.id === id)
+function getProductData(id) {
+    let productData = productArray.find(product => product.id === id)
 
-    if (organizationData === undefined) {
-        console.log('Organization not found');
+    if (productData === undefined) {
         return undefined;
     }
-
-    return organizationData;
 }
 
-export { organizationArray, getOrganizationData }
+export { productArray, getProductData };

@@ -1,8 +1,7 @@
-// includes card with image, givingday/org title, location (city, state), and save your match button
 import { Button, Card } from "react-bootstrap";
 
 
-function CardCreator({ organization }) {
+function OrgCard({ organization }) {
     return (
 
         <Card style={{ width: '18rem' }} className="saveMatch">
@@ -20,4 +19,4 @@ function CardCreator({ organization }) {
     );
 }
 
-export default CardCreator;
+export default OrgCard;

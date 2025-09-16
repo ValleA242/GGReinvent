@@ -1,6 +1,6 @@
 import { Row, Col } from "react-bootstrap";
-import CardCreator from "../components/OrgCard";
-import { organizationArray } from "../ProductStore";
+import OrgCard from "../components/OrgCard";
+import { organizationArray } from "../OrganizationStore";
 
 function SearchResults() {
     return (
@@ -10,7 +10,7 @@ function SearchResults() {
 
                     {organizationArray.map((organization) => (
                         <Col key={organization.id} align="center">
-                            <CardCreator organization={organization} />
+                            <OrgCard organization={organization} />
                         </Col>
                     ))}
 

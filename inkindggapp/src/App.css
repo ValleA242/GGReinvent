@@ -23,6 +23,14 @@ body,
   color: white;
 }
 
+
+/* MatchCard */
 .saveMatch {
   margin-bottom: 1rem;
+}
+
+/* Shopping Cart Modal */
+.shoppingCartModal {
+  display: flex;
+  justify-content: center;
 }

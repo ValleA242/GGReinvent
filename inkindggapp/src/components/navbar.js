@@ -1,7 +1,9 @@
-import { Container, Navbar, Nav, Modal } from "react-bootstrap";
+import { Container, Navbar, Nav, Modal, Row, Col } from "react-bootstrap";
 import { TiShoppingCart } from "react-icons/ti";
 import { GoSearch } from "react-icons/go";
 import { useState } from "react";
+import { productArray } from "../ProductStore";
+import ProductCard from "./ProductCard";
 
 
 
@@ -33,11 +35,24 @@ function NavbarComponent() {
                 </Container>
             </Navbar>
 
-            <Modal show={show} onHide={handleClose}>
+            {/* shopping cart functionality */}
+
+            <Modal show={show} onHide={handleClose} className="shoppingCartModal" >
                 <Modal.Header closeButton></Modal.Header>
-                <Modal.Title>Shopping Cart</Modal.Title>
                 <Modal.Body>
-                    <h1>Populate Amazon Items Here</h1>
+                    <>
+                        <main>
+                            <Row xs={1} sm={3} className="g-4">
+
+                                {productArray.map((product) => (
+                                    <Col key={product.id} align="center">
+                                        <ProductCard product={product} />
+                                    </Col>
+                                ))}
+
+                            </Row>
+                        </main>
+                    </>
                 </Modal.Body>
 
             </Modal>
