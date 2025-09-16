@@ -1,6 +1,9 @@
 import { Button, Container, Form } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom';
 
 function SearchPage() {
+
+    const navigate = useNavigate();
     return (
         <>
             <Container className='d-grid gap-2 text-white pt-3' style={{ backgroundColor: "#e78e4c" }}>
@@ -19,7 +22,14 @@ function SearchPage() {
                     </Form.Group>
 
                     <div className="d-grid">
-                        <Button variant='primary' type='submit' size='lg' className='mb-3' style={{ backgroundColor: "#a2bba8", borderColor: "#a2bba8" }}>
+                        <Button
+                            variant='primary'
+                            type='submit'
+                            size='lg'
+                            className='mb-3'
+                            style={{ backgroundColor: "#a2bba8", borderColor: "#a2bba8" }}
+                            onClick={() => navigate("/searchresults")}
+                        >
                             Search
                         </Button>
 

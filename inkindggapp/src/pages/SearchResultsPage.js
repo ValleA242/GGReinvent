@@ -1,11 +1,10 @@
 import { Row, Col } from "react-bootstrap";
-import { organizationArray } from "../ProductStore";
 import CardCreator from "../components/OrgCard";
 
 function SearchResults() {
     return (
         <>
-            <Row xs={1} md={3} className="g-4">
+            <Row xs={1} sm={3} className="g-4">
 
                 <Col align="center">
                     <CardCreator />

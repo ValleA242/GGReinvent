@@ -4,7 +4,7 @@ const organizationArray = [
     {
         id: '1',
         img: p4clogo,
-        orgName: 'Paws 4 the Cause',
+        orgName: 'Paws 4 a Cause',
         location: 'Raleigh, NC'
     },
 
@@ -26,7 +26,7 @@ const organizationArray = [
 function getOrganizationData(id) {
     let organizationData = organizationArray.find(organization => organization.id === id)
 
-    if (organizationData == undefined) {
+    if (organizationData === undefined) {
         console.log('Organization not found');
         return undefined;
     }
