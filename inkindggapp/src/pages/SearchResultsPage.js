@@ -1,8 +1,12 @@
 import { Row, Col } from "react-bootstrap";
 import OrgCard from "../components/OrgCard";
 import { organizationArray } from "../OrganizationStore";
+import { useState, useEffect } from "react";
+
+
 
 function SearchResults() {
+
     return (
         <>
             <main>
