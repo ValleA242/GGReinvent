@@ -1,12 +1,21 @@
 import { Button, Card } from "react-bootstrap";
-import useToggle from "./hooks/Toggler";
-import { useState } from "react";
+import useToggle from "../hooks/Toggler";
+import { useNavigate } from "react-router-dom"
+import { Modal } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
+import { productArray } from "../ProductStore";
+import WishListItemCard from "./WishListItemCard";
 
 
 
 function OrgCard({ organization }) {
 
     const [isMatched, toggleIsMatched] = useToggle();
+    const [inKind, toggleInKind] = useToggle();
+
+    const navigate = useNavigate();
+
+
 
     return (
 
@@ -17,17 +26,50 @@ function OrgCard({ organization }) {
                 <Card.Text>
                     {organization.location}
                 </Card.Text>
-                <Button onClick={toggleIsMatched}>
+                <Button className="w-100 m-1" onClick={toggleIsMatched}>
                     {isMatched ? "Matched" : "Click to Match"}
                 </Button>
                 {isMatched && (
-                    <div className="d-flex flex-row">
-                        <Button variant="success" className="w-50 m-1">
+                    <div className="d-flex flex-column">
+                        <Button
+                            variant="success"
+                            className="w-100 m-1"
+                            onClick={() => window.location.href = "https://give.galapagos.org/a/support"}
+                        >
                             Donate
                         </Button>
-                        <Button variant="success" className="w-50 m-1">
-                            In-Kind Gift
+                        <Button
+                            variant="success"
+                            className="w-100 m-1"
+                            onClick={toggleInKind}
+                        >
+                            In Kind
                         </Button>
+                        {inKind && (
+                            <Modal show={inKind} onHide={toggleInKind} className="wishlistModal" >
+                                <Modal.Header closeButton></Modal.Header>
+                                <Modal.Body>
+                                    <>
+                                        <main>
+                                            <Row xs={1} className="g-4">
+
+                                                <h1>Populate Amazon Wishlist from GiveGab Here</h1>
+
+                                                {productArray.map((product) => (
+                                                    <Col key={product.id} align="center">
+                                                        <WishListItemCard product={product} />
+                                                    </Col>
+                                                ))}
+
+                                            </Row>
+                                        </main>
+                                    </>
+                                </Modal.Body>
+
+                            </Modal>
+                        )}
+
+
                     </div>
                 )}
             </Card.Body>

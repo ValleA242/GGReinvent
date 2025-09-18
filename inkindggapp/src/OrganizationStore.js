@@ -4,21 +4,21 @@ const organizationArray = [
     {
         id: '1',
         img: p4clogo,
-        orgName: 'Paws 4 a Cause',
+        orgName: 'Paws 4 A Cause',
         location: 'Raleigh, NC'
     },
 
     {
         id: '2',
         img: p4clogo,
-        orgName: 'Paws 4 the Cause',
+        orgName: 'Paws 4 A Cause',
         location: 'Raleigh, NC'
     },
 
     {
         id: '3',
         img: p4clogo,
-        orgName: 'Paws 4 the Cause',
+        orgName: 'Paws 4 A Cause',
         location: 'Raleigh, NC'
     }
 ]
