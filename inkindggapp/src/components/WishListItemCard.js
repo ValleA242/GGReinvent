@@ -1,8 +1,6 @@
-// Card for items added to shopping cart
 import { Button, Card } from "react-bootstrap";
 
-
-function ProductCard({ product }) {
+function WishListItemCard({ product }) {
     return (
 
         <Card style={{ width: '18rem' }} className="saveMatch">
@@ -12,7 +10,7 @@ function ProductCard({ product }) {
                 <Card.Text>
                     ${product.price}
                 </Card.Text>
-                <Button>Remove from cart</Button>
+                <Button>Add to Cart</Button>
             </Card.Body>
         </Card>
 
@@ -20,4 +18,4 @@ function ProductCard({ product }) {
     );
 }
 
-export default ProductCard;
+export default WishListItemCard;

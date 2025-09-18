@@ -13,8 +13,8 @@ function SearchPage() {
 
                     <Form>
                         <Form.Group className="mb-3" controlId='keywordSearch'>
-                            <Form.Label>Search</Form.Label>
-                            <Form.Control type='search' placeholder='Search (e.g. SPCA, Food Bank)' />
+                            <Form.Label>Cause</Form.Label>
+                            <Form.Control type='search' placeholder='Search by Cause (e.g. Education, Foster Care)' />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId='orgLocation'>
