@@ -23,6 +23,21 @@ body,
   color: white;
 }
 
+/* Search Results Page */
+
+.containerForSearchContent {
+  margin: 2rem;
+}
+
+.searchTitle {
+  font-weight: bolder;
+}
+
+.searchResultsHeading {
+  text-align: center;
+}
+
+
 
 /* MatchCard */
 .saveMatch {
