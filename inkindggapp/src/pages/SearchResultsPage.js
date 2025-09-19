@@ -18,7 +18,7 @@ function SearchResults() {
 
     return (
         <>
-            <main className="containerForSearchContent">
+            <main className={`containerForSearchContent ${drawer ? "shifted" : ''}`}>
                 <div className="searchFormCont m-5">
                     <h1 className="searchFormLabel">Search</h1>
                     <Row as={Form} className="align-items-center justify-content-between g-2">
@@ -55,8 +55,17 @@ function SearchResults() {
                 </div>
 
                 {drawer && (
-                    <Offcanvas className="sideDrawer" show={drawer} onHide={toggleDrawer}>
-                        <Offcanvas.Header closeButton></Offcanvas.Header>
+                    <Offcanvas
+                        className="sideDrawer bg-body-tertiary"
+                        show={drawer}
+                        onHide={toggleDrawer}
+                        placement="end"
+                        backdrop
+                        scroll="false"
+                        style={{ width: "25vw", minWidth: 280, maxWidth: 480 }}
+
+                    >
+                        <Offcanvas.Header></Offcanvas.Header>
                         <Offcanvas.Title className="m-3"> Filters</Offcanvas.Title>
                         <Dropdown>
                             <Dropdown.Toggle variant="secondary" id="dropdown-basic" className="causeDropdown">
@@ -70,6 +79,11 @@ function SearchResults() {
                                 }
                             </Dropdown.Menu>
                         </Dropdown>
+                        <Form className="drawerCitySearch m-3">
+                            <Form.Group>
+                                <Form.Control type="search" placeholder="Filter by City"></Form.Control>
+                            </Form.Group>
+                        </Form>
                     </Offcanvas>
                 )}
 

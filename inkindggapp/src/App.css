@@ -27,6 +27,12 @@ body,
 
 .containerForSearchContent {
   margin: 2rem;
+  transition: transform 250ms ease;
+  will-change: transform;
+}
+
+.containerForSearchContent.shifted {
+  transform: translateX(-300px);
 }
 
 .searchTitle {
@@ -39,7 +45,9 @@ body,
 
 .sideDrawer {
   text-align: center;
+
 }
+
 
 
 
