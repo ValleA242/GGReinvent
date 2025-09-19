@@ -27,6 +27,12 @@ body,
 
 .containerForSearchContent {
   margin: 2rem;
+  transition: transform 250ms ease;
+  will-change: transform;
+}
+
+.containerForSearchContent.shifted {
+  transform: translateX(-300px);
 }
 
 .searchTitle {
@@ -39,7 +45,9 @@ body,
 
 .sideDrawer {
   text-align: center;
+
 }
+
 
 
 
@@ -50,15 +58,22 @@ body,
 }
 
 .cardImage {
-  padding-top: 2rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding: 1rem;
 }
 
 .orgCardButton {
   background-color: #70b2e0 !important;
   border-color: #70b2e0 !important;
   font-weight: bolder !important;
+}
+
+.heartButton {
+  all: unset;
+  background: none;
+  padding: 0;
+  color: #70b2e0;
+  font-size: 2rem;
+  cursor: pointer;
 }
 
 

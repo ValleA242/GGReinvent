@@ -5,12 +5,16 @@ import { Modal } from "react-bootstrap";
 import { Row, Col } from "react-bootstrap";
 import { productArray } from "../ProductStore";
 import WishListItemCard from "./WishListItemCard";
+import { FaRegHeart } from "react-icons/fa6";
+import { FaHeart } from "react-icons/fa";
+
+
 
 
 
 function OrgCard({ organization }) {
 
-    const [isMatched, toggleIsMatched] = useToggle();
+    const [isFavorite, toggleIsFavorite] = useToggle();
     const [inKind, toggleInKind] = useToggle();
 
     const navigate = useNavigate();
@@ -20,8 +24,14 @@ function OrgCard({ organization }) {
     return (
 
         <Card className="saveMatch">
-            <Card.Img className="cardImage" variant="top" src={organization.img} />
+
             <Card.Body>
+                <div className="text-end">
+                    <button className="heartButton" onClick={toggleIsFavorite}>
+                        {isFavorite ? <FaHeart /> : <FaRegHeart />}
+                    </button>
+                </div>
+                <Card.Img className="cardImage" variant="top" src={organization.img} />
                 <Card.Title>{organization.orgName}</Card.Title>
                 <Card.Text>
                     {organization.location}
