@@ -19,59 +19,50 @@ function OrgCard({ organization }) {
 
     return (
 
-        <Card style={{ width: '18rem' }} className="saveMatch">
-            <Card.Img variant="top" src={organization.img} />
+        <Card className="saveMatch">
+            <Card.Img className="cardImage" variant="top" src={organization.img} />
             <Card.Body>
                 <Card.Title>{organization.orgName}</Card.Title>
                 <Card.Text>
                     {organization.location}
                 </Card.Text>
-                <Button className="w-100 m-1" onClick={toggleIsMatched}>
-                    {isMatched ? "Matched" : "Click to Match"}
-                </Button>
-                {isMatched && (
-                    <div className="d-flex flex-column">
-                        <Button
-                            variant="success"
-                            className="w-100 m-1"
-                            onClick={() => window.location.href = "https://give.galapagos.org/a/support"}
-                        >
-                            Donate
-                        </Button>
-                        <Button
-                            variant="success"
-                            className="w-100 m-1"
-                            onClick={toggleInKind}
-                        >
-                            In Kind
-                        </Button>
-                        {inKind && (
-                            <Modal show={inKind} onHide={toggleInKind} className="wishlistModal" >
-                                <Modal.Header closeButton></Modal.Header>
-                                <Modal.Body>
-                                    <>
-                                        <main>
-                                            <Row xs={1} className="g-4">
 
-                                                <h1>Populate Amazon Wishlist from GiveGab Here</h1>
+                <div className="d-flex flex-row">
+                    <Button
+                        className="orgCardButton w-100 m-1"
+                        onClick={() => window.location.href = "https://give.galapagos.org/a/support"}
+                    >
+                        View
+                    </Button>
+                    <Button
+                        className="orgCardButton w-100 m-1"
+                        onClick={toggleInKind}
+                    >
+                        Give
+                    </Button>
+                    {inKind && (
+                        <Modal show={inKind} onHide={toggleInKind} className="wishlistModal" >
+                            <Modal.Header closeButton></Modal.Header>
+                            <Modal.Body>
+                                <>
+                                    <main>
+                                        <Row xs={1} className="g-4">
+                                            {productArray.map((product) => (
+                                                <Col key={product.id} align="center">
+                                                    <WishListItemCard product={product} />
+                                                </Col>
+                                            ))}
 
-                                                {productArray.map((product) => (
-                                                    <Col key={product.id} align="center">
-                                                        <WishListItemCard product={product} />
-                                                    </Col>
-                                                ))}
+                                        </Row>
+                                    </main>
+                                </>
+                            </Modal.Body>
 
-                                            </Row>
-                                        </main>
-                                    </>
-                                </Modal.Body>
-
-                            </Modal>
-                        )}
+                        </Modal>
+                    )}
 
 
-                    </div>
-                )}
+                </div>
             </Card.Body>
         </Card>
 

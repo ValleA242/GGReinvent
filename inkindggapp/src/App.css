@@ -23,11 +23,44 @@ body,
   color: white;
 }
 
+/* Search Results Page */
 
-/* MatchCard */
-.saveMatch {
-  margin: 1rem;
+.containerForSearchContent {
+  margin: 2rem;
 }
+
+.searchTitle {
+  font-weight: bolder;
+}
+
+.searchResultsHeading {
+  text-align: center;
+}
+
+.sideDrawer {
+  text-align: center;
+}
+
+
+
+/* Organization Card */
+.saveMatch {
+  margin: auto;
+  width: 20rem;
+}
+
+.cardImage {
+  padding-top: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.orgCardButton {
+  background-color: #70b2e0 !important;
+  border-color: #70b2e0 !important;
+  font-weight: bolder !important;
+}
+
 
 /* Shopping Cart Modal */
 .shoppingCartModal {

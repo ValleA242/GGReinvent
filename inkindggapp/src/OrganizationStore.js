@@ -5,21 +5,24 @@ const organizationArray = [
         id: '1',
         img: p4clogo,
         orgName: 'Paws 4 A Cause',
-        location: 'Raleigh, NC'
+        location: 'Raleigh, NC',
+        cause: 'Animals'
     },
 
     {
         id: '2',
         img: p4clogo,
-        orgName: 'Paws 4 A Cause',
-        location: 'Raleigh, NC'
+        orgName: 'WTCC',
+        location: 'Raleigh, NC',
+        cause: 'Education'
     },
 
     {
         id: '3',
         img: p4clogo,
-        orgName: 'Paws 4 A Cause',
-        location: 'Raleigh, NC'
+        orgName: 'Red Cross NC',
+        location: 'Raleigh, NC',
+        cause: 'Disaster Relief'
     }
 ]
 
