@@ -37,12 +37,30 @@ body,
   text-align: center;
 }
 
-
-
-/* MatchCard */
-.saveMatch {
-  margin: 1rem;
+.sideDrawer {
+  text-align: center;
 }
+
+
+
+/* Organization Card */
+.saveMatch {
+  margin: auto;
+  width: 20rem;
+}
+
+.cardImage {
+  padding-top: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.orgCardButton {
+  background-color: #70b2e0 !important;
+  border-color: #70b2e0 !important;
+  font-weight: bolder !important;
+}
+
 
 /* Shopping Cart Modal */
 .shoppingCartModal {

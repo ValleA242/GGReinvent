@@ -1,12 +1,20 @@
-import { Row, Col, Form, FormGroup, Button, Container } from "react-bootstrap";
+import { Row, Col, Form, FormGroup, Button, Container, Offcanvas, Dropdown } from "react-bootstrap";
 import OrgCard from "../components/OrgCard";
 import { organizationArray } from "../OrganizationStore";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import useToggle from "../hooks/Toggler";
 
 
 
 function SearchResults() {
+
+    // reserving piece of state for offcanvas toggle for filters. Utilizing useToggle custom hook 
+    const [drawer, toggleDrawer] = useToggle();
+
+    const handleClose = useToggle(false);
+    const handleShow = useToggle(true);
+
 
     return (
         <>
@@ -25,7 +33,7 @@ function SearchResults() {
                         </Col>
 
                         <Col xs="auto">
-                            <Button variant="link" className="filterModalToggle p-0">Show Filters</Button>
+                            <Button variant="link" className="filterModalToggle p-0" onClick={toggleDrawer}>{drawer ? "Hide Filters" : "Show Filters"}</Button>
                         </Col>
                     </Row>
 
@@ -45,6 +53,27 @@ function SearchResults() {
 
                     </Row>
                 </div>
+
+                {drawer && (
+                    <Offcanvas className="sideDrawer" show={drawer} onHide={toggleDrawer}>
+                        <Offcanvas.Header closeButton></Offcanvas.Header>
+                        <Offcanvas.Title className="m-3"> Filters</Offcanvas.Title>
+                        <Dropdown>
+                            <Dropdown.Toggle variant="secondary" id="dropdown-basic" className="causeDropdown">
+                                Select Cause
+                            </Dropdown.Toggle>
+
+                            <Dropdown.Menu>
+                                {organizationArray.map((cause) => (
+                                    <Dropdown.Item key={cause.id}>{cause.cause}</Dropdown.Item>
+                                ))
+                                }
+                            </Dropdown.Menu>
+                        </Dropdown>
+                    </Offcanvas>
+                )}
+
+
             </main >
         </>
     )
