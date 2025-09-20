@@ -7,19 +7,17 @@ import { productArray } from "../ProductStore";
 import WishListItemCard from "./WishListItemCard";
 import { FaRegHeart } from "react-icons/fa6";
 import { FaHeart } from "react-icons/fa";
+import DonationCards from "./DonationCards";
 
 
 
 
 
-function OrgCard({ organization }) {
+function OrgCard({ organization, onDonate }) {
 
     const [isFavorite, toggleIsFavorite] = useToggle();
-    const [inKind, toggleInKind] = useToggle();
 
     const navigate = useNavigate();
-
-
 
     return (
 
@@ -46,30 +44,11 @@ function OrgCard({ organization }) {
                     </Button>
                     <Button
                         className="orgCardButton w-100 m-1"
-                        onClick={toggleInKind}
+                        onClick={() => onDonate(organization)}
+
                     >
-                        Give
+                        Donate Now
                     </Button>
-                    {inKind && (
-                        <Modal show={inKind} onHide={toggleInKind} className="wishlistModal" >
-                            <Modal.Header closeButton></Modal.Header>
-                            <Modal.Body>
-                                <>
-                                    <main>
-                                        <Row xs={1} className="g-4">
-                                            {productArray.map((product) => (
-                                                <Col key={product.id} align="center">
-                                                    <WishListItemCard product={product} />
-                                                </Col>
-                                            ))}
-
-                                        </Row>
-                                    </main>
-                                </>
-                            </Modal.Body>
-
-                        </Modal>
-                    )}
 
 
                 </div>

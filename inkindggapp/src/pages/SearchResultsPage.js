@@ -1,16 +1,19 @@
-import { Row, Col, Form, FormGroup, Button, Container, Offcanvas, Dropdown } from "react-bootstrap";
+import { Row, Col, Form, Button, Modal, Offcanvas, Dropdown } from "react-bootstrap";
 import OrgCard from "../components/OrgCard";
 import { organizationArray } from "../OrganizationStore";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import useToggle from "../hooks/Toggler";
+import DonationCards from "../components/DonationCards";
 
 
 
 function SearchResults() {
 
     // reserving piece of state for offcanvas toggle for filters. Utilizing useToggle custom hook 
-    const [drawer, toggleDrawer] = useToggle();
+    const [drawer, toggleDrawer] = useToggle(); //toggle for side drawer
+
+    const [selectOrg, setSelectOrg] = useState(null);
 
     const handleClose = useToggle(false);
     const handleShow = useToggle(true);
@@ -47,11 +50,28 @@ function SearchResults() {
 
                         {organizationArray.map((organization) => (
                             <Col key={organization.id} align="center">
-                                <OrgCard organization={organization} />
+                                <OrgCard
+                                    organization={organization}
+                                    onDonate={setSelectOrg}
+                                />
                             </Col>
                         ))}
 
                     </Row>
+
+                    <Modal
+                        show={!!selectOrg}
+                        onHide={() => setSelectOrg(null)}
+                        className="donorModal"
+                    >
+                        <Modal.Header closeButton />
+                        <Modal.Body>
+                            <DonationCards
+                                selectedOrg={selectOrg}
+                            />
+                        </Modal.Body>
+
+                    </Modal>
                 </div>
 
                 {drawer && (
