@@ -13,14 +13,11 @@ import DonationCards from "./DonationCards";
 
 
 
-function OrgCard({ organization }) {
+function OrgCard({ organization, onDonate }) {
 
     const [isFavorite, toggleIsFavorite] = useToggle();
-    const [donorModal, toggleDonorModal] = useToggle();
 
     const navigate = useNavigate();
-
-
 
     return (
 
@@ -47,23 +44,11 @@ function OrgCard({ organization }) {
                     </Button>
                     <Button
                         className="orgCardButton w-100 m-1"
-                        onClick={toggleDonorModal}
+                        onClick={() => onDonate(organization)}
+
                     >
                         Donate Now
                     </Button>
-                    {donorModal && (
-                        <Modal show={donorModal} onHide={toggleDonorModal} className="donorModal" >
-                            <Modal.Header closeButton></Modal.Header>
-                            <Modal.Body>
-                                <>
-                                    <main>
-                                        <DonationCards />
-                                    </main>
-                                </>
-                            </Modal.Body>
-
-                        </Modal>
-                    )}
 
 
                 </div>
