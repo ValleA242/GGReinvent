@@ -6,7 +6,9 @@ const organizationArray = [
         img: p4clogo,
         orgName: 'Paws 4 A Cause',
         location: 'Raleigh, NC',
-        cause: 'Animals'
+        cause: 'Animals',
+        askAmounts: [25, 50, 100]
+
     },
 
     {
@@ -14,7 +16,9 @@ const organizationArray = [
         img: p4clogo,
         orgName: 'WTCC',
         location: 'Raleigh, NC',
-        cause: 'Education'
+        cause: 'Education',
+        askAmounts: [25, 60, 100]
+
     },
 
     {
@@ -22,7 +26,8 @@ const organizationArray = [
         img: p4clogo,
         orgName: 'Red Cross NC',
         location: 'Raleigh, NC',
-        cause: 'Disaster Relief'
+        cause: 'Disaster Relief',
+        askAmounts: [30, 70, 100]
     }
 ]
 

@@ -4,13 +4,14 @@ import { organizationArray } from "../OrganizationStore";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import useToggle from "../hooks/Toggler";
+import DonationCards from "../components/DonationCards";
 
 
 
 function SearchResults() {
 
     // reserving piece of state for offcanvas toggle for filters. Utilizing useToggle custom hook 
-    const [drawer, toggleDrawer] = useToggle();
+    const [drawer, toggleDrawer] = useToggle(); //toggle for side drawer
 
     const handleClose = useToggle(false);
     const handleShow = useToggle(true);
