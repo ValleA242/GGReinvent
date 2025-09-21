@@ -1,13 +1,11 @@
 import { Button, Card } from "react-bootstrap";
 import useToggle from "../hooks/Toggler";
 import { useNavigate } from "react-router-dom"
-import { Modal } from "react-bootstrap";
-import { Row, Col } from "react-bootstrap";
-import { productArray } from "../ProductStore";
-import WishListItemCard from "./WishListItemCard";
 import { FaRegHeart } from "react-icons/fa6";
 import { FaHeart } from "react-icons/fa";
-import DonationCards from "./DonationCards";
+
+
+
 
 
 
@@ -38,7 +36,7 @@ function OrgCard({ organization, onDonate }) {
                 <div className="d-flex flex-row">
                     <Button
                         className="orgCardButton w-100 m-1"
-                        onClick={() => window.location.href = "https://give.galapagos.org/a/support"}
+                        onClick={() => navigate("/nonprofitwebpage")}
                     >
                         View
                     </Button>
