@@ -13,8 +13,10 @@ import { FaHeart } from "react-icons/fa";
 
 function OrgCard({ organization, onDonate }) {
 
+    //use toggle is a custom hook in hooks folder
     const [isFavorite, toggleIsFavorite] = useToggle();
 
+    //easier naming convention that I used. 
     const navigate = useNavigate();
 
     return (
@@ -23,6 +25,7 @@ function OrgCard({ organization, onDonate }) {
 
             <Card.Body>
                 <div className="text-end">
+                    {/* heart toggle on organization card */}
                     <button className="heartButton" onClick={toggleIsFavorite}>
                         {isFavorite ? <FaHeart /> : <FaRegHeart />}
                     </button>

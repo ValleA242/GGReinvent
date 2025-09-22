@@ -6,6 +6,7 @@ import { productArray } from "../ProductStore";
 
 
 function NonProfitWebPage() {
+    //useToggle is a custom hook stored under hooks. showWishList state for inkind button click toggle. 
     const [showWishList, setShowWishList] = useToggle();
 
     return (
@@ -24,6 +25,7 @@ function NonProfitWebPage() {
                     onHide={setShowWishList}
                 >
                     <ModalBody>
+                        {/* Populate  wishlist item cards and pass product prop to WishlistItemCard Component*/}
                         {productArray.map((product) => (
                             <WishListItemCard key={product.id} product={product} />
                         ))}
