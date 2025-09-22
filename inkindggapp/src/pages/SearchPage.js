@@ -48,7 +48,7 @@ function SearchPage() {
                     <h1 className='text-bold'> Saved Matches</h1>
                     {/* if match array.length = 0 show this h2 otherwise show the objects in the array */}
                     <h4>You currently have no saved matches</h4>
-                    <Button style={{ backgroundColor: "#e78e4c" }}>
+                    <Button className="seeMatchesButton">
                         See Matches
                     </Button>
 

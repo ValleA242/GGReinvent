@@ -11,9 +11,13 @@ function NonProfitWebPage() {
     return (
 
         <>
-            <Button>Donate</Button>
-            <Button onClick={setShowWishList}>In Kind</Button>
-
+            <div className="nonProfitWPTopContainer">
+                <h1>Non Profit's Webpage</h1>
+            </div>
+            <div className="nonProfitWebPageButtonContainer">
+                <Button className="nonProfitWPButtons">Donate</Button>
+                <Button className="nonProfitWPButtons" onClick={setShowWishList}>In Kind</Button>
+            </div>
             {showWishList && (
                 <Modal
                     show={showWishList}
