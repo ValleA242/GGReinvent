@@ -6,20 +6,26 @@ import { productArray } from "../ProductStore";
 
 
 function NonProfitWebPage() {
+    //useToggle is a custom hook stored under hooks. showWishList state for inkind button click toggle. 
     const [showWishList, setShowWishList] = useToggle();
 
     return (
 
         <>
-            <Button>Donate</Button>
-            <Button onClick={setShowWishList}>In Kind</Button>
-
+            <div className="nonProfitWPTopContainer">
+                <h1>Non Profit's Webpage</h1>
+            </div>
+            <div className="nonProfitWebPageButtonContainer">
+                <Button className="nonProfitWPButtons">Donate</Button>
+                <Button className="nonProfitWPButtons" onClick={setShowWishList}>In Kind</Button>
+            </div>
             {showWishList && (
                 <Modal
                     show={showWishList}
                     onHide={setShowWishList}
                 >
                     <ModalBody>
+                        {/* Populate  wishlist item cards and pass product prop to WishlistItemCard Component*/}
                         {productArray.map((product) => (
                             <WishListItemCard key={product.id} product={product} />
                         ))}

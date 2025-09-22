@@ -10,18 +10,24 @@ import DonationCards from "../components/DonationCards";
 
 function SearchResults() {
 
-    // reserving piece of state for offcanvas toggle for filters. Utilizing useToggle custom hook 
-    const [drawer, toggleDrawer] = useToggle(); //toggle for side drawer
+    // reserving piece of state for offcanvas toggle for filters. Utilizing useToggle custom hook stored in the hooks folder.
+    const [drawer, toggleDrawer] = useToggle();
 
+    // Sets selected org in state determined by click event for donate button on OrgCard component.
     const [selectOrg, setSelectOrg] = useState(null);
 
-    const handleClose = useToggle(false);
-    const handleShow = useToggle(true);
+    //Saving below for later use 
+    //const handleClose = useToggle(false);
+    // const handleShow = useToggle(true);
 
 
     return (
         <>
+
+            {/* Class names switch to drawer styling based on state. See App.css for styling. */}
             <main className={`containerForSearchContent ${drawer ? "shifted" : ''}`}>
+
+                {/* Structure for search functionality on top of page */}
                 <div className="searchFormCont m-5">
                     <h1 className="searchFormLabel">Search</h1>
                     <Row as={Form} className="align-items-center justify-content-between g-2">
@@ -35,6 +41,7 @@ function SearchResults() {
                             <Link to="#" className="viewAllOrgs p-0">View All</Link>
                         </Col>
 
+                        {/* Drawer toggle */}
                         <Col xs="auto">
                             <Button variant="link" className="filterModalToggle p-0" onClick={toggleDrawer}>{drawer ? "Hide Filters" : "Show Filters"}</Button>
                         </Col>
@@ -48,11 +55,12 @@ function SearchResults() {
 
                     <Row xs={1} sm={3} className="g-4 m-0">
 
+                        {/* Populates OrgCard Components to search results page */}
                         {organizationArray.map((organization) => (
                             <Col key={organization.id} align="center">
                                 <OrgCard
                                     organization={organization}
-                                    onDonate={setSelectOrg}
+                                    onDonate={setSelectOrg} // Passes selected org to org card for click event
                                 />
                             </Col>
                         ))}
@@ -60,7 +68,7 @@ function SearchResults() {
                     </Row>
 
                     <Modal
-                        show={!!selectOrg}
+                        show={!!selectOrg} //Force selectOrg into boolean
                         onHide={() => setSelectOrg(null)}
                         className="donorModal"
                     >
@@ -93,6 +101,7 @@ function SearchResults() {
                             </Dropdown.Toggle>
 
                             <Dropdown.Menu>
+                                {/* Maps out causes for drop down. Causes are located in OrganizationStore file. We will be populating this info from a Give Gab object  */}
                                 {organizationArray.map((cause) => (
                                     <Dropdown.Item key={cause.id}>{cause.cause}</Dropdown.Item>
                                 ))

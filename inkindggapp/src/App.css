@@ -23,6 +23,13 @@ body,
   color: white;
 }
 
+/* Search Page */
+
+.seeMatchesButton {
+  border-color: #e78e4c !important;
+  background-color: #e78e4c !important;
+}
+
 /* Search Results Page */
 
 .containerForSearchContent {
@@ -81,4 +88,22 @@ body,
 .shoppingCartModal {
   display: flex;
   justify-content: center;
+}
+
+/* Non-Profit Web Page */
+.nonProfitWPTopContainer {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.nonProfitWebPageButtonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.nonProfitWPButtons {
+  margin: 1rem;
 }
