@@ -32,8 +32,8 @@ function SearchResults() {
                     <h1 className="searchFormLabel">Search</h1>
                     <Row as={Form} className="align-items-center justify-content-between g-2">
                         <Col xs={20} md={7}>
-                            <Form.Group className="searchPageSearchBar mb-0">
-                                <Form.Control type="search" placeholder="Search" />
+                            <Form.Group className="mb-0">
+                                <Form.Control className="searchPageSearchBar" type="search" placeholder="Search" />
                             </Form.Group>
                         </Col>
 
