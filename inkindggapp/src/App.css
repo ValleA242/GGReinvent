@@ -59,7 +59,7 @@ body,
   border: none !important;
   border-bottom: 2px solid black !important;
   border-radius: 0px !important;
-  outline: none;
+  outline: none !important;
   padding: 5px;
 }
 
