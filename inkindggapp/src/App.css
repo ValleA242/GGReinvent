@@ -78,6 +78,7 @@ body,
 .saveMatch {
   margin: auto;
   width: 20rem;
+  padding: 4rem !important;
 }
 
 .cardImage {
@@ -88,6 +89,7 @@ body,
   background-color: #70b2e0 !important;
   border-color: #70b2e0 !important;
   font-weight: bolder !important;
+
 }
 
 .heartButton {
